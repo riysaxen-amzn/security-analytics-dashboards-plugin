@@ -75,7 +75,6 @@ export class SecurityAnalyticsPlugin
 
   private updateDefaultRouteOfManagementApplications: AppUpdater = () => {
     const dataSourceValue = dataSourceObservable.value?.id;
-    console.log("DataSource value is 1 ", dataSourceValue);
     let hash = `#/`;
     /***
      When data source value is undefined,
@@ -84,6 +83,9 @@ export class SecurityAnalyticsPlugin
      **/
     if (dataSourceValue !== undefined) {
       hash = `#/?dataSourceId=${dataSourceValue}`;
+    }
+    return {
+      defaultPath: hash
     }
   };
 

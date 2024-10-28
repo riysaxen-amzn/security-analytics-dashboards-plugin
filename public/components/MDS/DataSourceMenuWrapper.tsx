@@ -80,7 +80,7 @@ export const DataSourceMenuWrapper: React.FC<DataSourceMenuWrapperProps> = ({
   });
 
   if (matchedPath) {
-    // should have the data source id in url, if not then redirect back to the overview or related page for each path\
+    // should have the data source id in url, if not then redirect back to the overview or related page for each path
     const searchParams = new URLSearchParams(location.search);
     const dataSourceId = searchParams.get('dataSourceId');
     if (dataSourceId !== null && dataSourceId !== undefined) {
