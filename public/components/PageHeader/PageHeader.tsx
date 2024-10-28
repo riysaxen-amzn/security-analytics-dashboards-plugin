@@ -9,6 +9,7 @@ import {
   TopNavControlDescriptionData,
 } from '../../../../../src/plugins/navigation/public';
 import { getApplication, getNavigationUI, getUseUpdatedUx } from '../../services/utils/constants';
+import {useUpdateUrlWithDataSourceProperties} from "../../utils/helpers";
 
 export interface PageHeaderProps {
   appRightControls?: TopNavControlData[];

@@ -17,7 +17,7 @@ import {
 } from '@elastic/eui';
 import moment from 'moment';
 import { PeriodSchedule } from '../../models/interfaces';
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import {
   ALERT_SEVERITY_OPTIONS,
   ALERT_SEVERITY_PROPS,

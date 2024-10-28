@@ -146,6 +146,7 @@ export default class Main extends Component<MainProps, MainState> {
         };
     let dataSourceId = '';
     let dataSourceLabel = '';
+    console.log("props location is  ", this.props.location);
     if (props.multiDataSourceEnabled) {
       const {
         dataSourceId: parsedDataSourceId,
@@ -156,10 +157,8 @@ export default class Main extends Component<MainProps, MainState> {
       };
       dataSourceId = parsedDataSourceId;
       dataSourceLabel = parsedDataSourceLabel || '';
-
-      if (dataSourceId) {
-        dataSourceObservable.next({ id: dataSourceId, label: dataSourceLabel });
-      }
+      console.log("dataSourceId is ", dataSourceId);
+      console.log("DataSource observable is ", dataSourceObservable);
     }
 
     this.state = {
@@ -275,11 +274,13 @@ export default class Main extends Component<MainProps, MainState> {
       this.setState({
         selectedDataSource: { ...sources[0] },
       });
+      console.log("DataSource observable is 3 ", sources[0]);
+      dataSourceObservable.next(
+        dataSourceInfo.activeDataSource
+      );
+      console.log("DataSource observable is 4 ", dataSourceObservable);
     }
-    dataSourceObservable.next({
-      id: this.state.selectedDataSource.id,
-      label: this.state.selectedDataSource.label,
-    });
+
     if (dataSourceLoading) {
       this.setState({ dataSourceLoading: false });
     }
